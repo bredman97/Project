@@ -3,15 +3,15 @@ let mongoose = require('mongoose');
 // create a model class
 let MangaModel = mongoose.Schema({
     
-   Title:String,
-   Author:String,
-   Genre:String,
-   Published_year:Number,
-   Rating:Number,
-   Status:String,
-   Volumes:String,
-   MainCharacter:String,
-   Price:Number,
+   title:String,
+   author:String,
+   genre:String,
+   published_year:Number,
+   rating:Number,
+   status:String,
+   volumes:String,
+   main_character:String,
+   price:Number,
 
 },
 {
