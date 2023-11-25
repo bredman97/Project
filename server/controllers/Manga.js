@@ -47,7 +47,7 @@ module.exports.ProcessManga = async (req,res,next)=>{
             "status": req.body.status,
             "volumes": req.body.volumes,
             "main_character": req.body.main_character,
-            "price": req.body.price,
+            "price": req.body.price
            
         });
         Manga.create(newManga).then(() =>{
@@ -95,7 +95,7 @@ module.exports.ProcessEditManga = (req,res,next)=>{
             "status": req.body.status,
             "volumes": req.body.volumes,
             "main_character": req.body.main_character,
-            "price": req.body.price,
+            "price": req.body.price
 
             
             
@@ -123,7 +123,7 @@ module.exports.DeleteManga = (req,res,next)=>{
     }
     catch(error){
         console.error(err);
-        res.render('Manga',
+        res.render('Manga/list',
         {
             error: 'Error on the server'
         });
