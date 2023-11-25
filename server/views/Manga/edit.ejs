@@ -10,9 +10,9 @@
         
             <form class="form" method="POST">
                 <div class="form-group">
-                    <label for="nameTextField">Manga Title</label>
+                    <label for="titleTextField">Manga Title</label>
                     <input type="text" class="form-control"
-                    id="nameTextField"
+                    id="titleTextField"
                     placeholder="Enter the Manga Title"
                     name="title" 
                     value="<%= Manga.title %>"
@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <label for="publishedTextField">Genre</label>
                     <input type="text" class="form-control"
-                    id="publishedTextField"
+                    id="genreTextField"
                     placeholder="Enter the Genre"
                     name="genre"
                     value="<%= Manga.genre %>"
@@ -40,20 +40,21 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="descriptionTextArea">Published</label>
+                    <label for="publishedTextArea">Published</label>
                     <textarea type="text" class="form-control"
-                    id="descriptionTextArea"
+                    id="publishedTextArea"
                     placeholder="Enter the Year when it is published"
                     name="published_year" 
+                    value= "<%= Manga.published_year %>"
                     required>
-                    <%= Manga.published %>
+                    
                     </textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="priceTextField">Rating</label>
+                    <label for="ratingTextField">Rating</label>
                     <input type="text" class="form-control"
-                    id="priceTextField"
+                    id="ratingTextField"
                     placeholder="Enter the Manga's Rating"
                     name="rating" 
                     value="<%= Manga.rating %>"
@@ -61,9 +62,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="priceTextField">Status</label>
+                    <label for="statusTextField">Status</label>
                     <input type="text" class="form-control"
-                    id="priceTextField"
+                    id="statusTextField"
                     placeholder="Enter the Manga's Status"
                     name="status" 
                     value="<%= Manga.status %>"
@@ -72,22 +73,22 @@
 
 
                  <div class="form-group">
-                    <label for="priceTextField">Volume</label>
+                    <label for="volumeTextField">Volume</label>
                     <input type="text" class="form-control"
-                    id="priceTextField"
+                    id="volumeTextField"
                     placeholder="Enter the Manga's Volume"
                     name="volumes"
-                    value="<%= Manga.volume %>"
+                    value="<%= Manga.volumes %>"
                     required>
                 </div>
 
                 <div class="form-group">
-                    <label for="priceTextField">Main character</label>
+                    <label for="mainCharacterTextField">Main character</label>
                     <input type="text" class="form-control"
-                    id="priceTextField"
+                    id="mainCharacterTextField"
                     placeholder="Enter the Manga's main chacrater"
                     name="main_character"
-                    value="<%= Manga.maincharacter %>"
+                    value="<%= Manga.main_character %>"
                     required>
                 </div>
 
