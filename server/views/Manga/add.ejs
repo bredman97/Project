@@ -1,0 +1,117 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+     <div class="row pb-5">
+        <div class="offset-md-1 col-md-10">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Manga Title</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Manga Title"
+                    name="title" 
+                   
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="authorTextField">Author</label>
+                    <input type="text" class="form-control"
+                    id="authorTextField"
+                    placeholder="Enter the Manga's Author"
+                    name="author" 
+                   
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="publishedTextField">Genre</label>
+                    <input type="text" class="form-control"
+                    id="publishedTextField"
+                    placeholder="Enter the Genre"
+                    name="genre" 
+              
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTextArea">Published</label>
+                    <textarea type="text" class="form-control"
+                    id="descriptionTextArea"
+                    placeholder="Enter the Year when it is published"
+                    name="published_year" 
+                    required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="ratingTextField">Rating</label>
+                    <input type="text" class="form-control"
+                    id="ratingTextField"
+                    placeholder="Enter the Manga's Rating"
+                    name="rating"                     
+                    required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="statusTextField">Status</label>
+                    <input type="text" class="form-control"
+                    id="statusTextField"
+                    placeholder="Enter the Manga's Status"
+                    name="status" 
+                    
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="volumeTextField">Volume</label>
+                    <input type="text" class="form-control"
+                    id="volumeTextField"
+                    placeholder="Enter the Manga's Volume"
+                    name="volumes" 
+                    
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="maincharacterTextField">Main character</label>
+                    <input type="text" class="form-control"
+                    id="maincharacterTextField"
+                    placeholder="Enter the Manga's main chacrater"
+                    name="main_character" 
+                    
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="priceTextField">Price</label>
+                    <input type="text" class="form-control"
+                    id="priceTextField"
+                    placeholder="Enter the Manga's price"
+                    name="price" 
+                    
+                    required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/Manga" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
