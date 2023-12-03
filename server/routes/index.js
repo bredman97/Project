@@ -8,7 +8,7 @@ let User = userModel.User;
 router.get('/login',function(req,res,next){
   if(!req.user)
   {
-    res.render('auth/login',
+    res.render('Auth/login',
     {
       title:'Login',
       message: req.flash('loginMessage'),
@@ -47,7 +47,7 @@ router.post('/login',function(req,res,next){
 router.get('/register',function(req,res,next){
   if(!req.user)
   {
-    res.render('auth/register',
+    res.render('Auth/Register',
     {
       title:'Register',
       message: req.flash('registerMessage'),
@@ -62,7 +62,7 @@ router.get('/register',function(req,res,next){
 router.post('/register', function(req,res,next){
   let newUser = new User({
     username: req.body.username,
-    // password: req.body.password,
+    password: req.body.password,
     email: req.body.email,
     displayName: req.body.displayName
   })
@@ -75,7 +75,7 @@ router.post('/register', function(req,res,next){
         req.flash('registerMessage',
         'Registration Error : User already Exist'
       )}
-      return res.render('auth/register',
+      return res.render('Auth/Register',
       {
         title:'Register',
         message: req.flash('registerMessage'),
