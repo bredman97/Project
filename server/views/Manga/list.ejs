@@ -21,6 +21,7 @@
             <br>
         <table class="table table-bordered table-striped table-hover">
             <tr class="d-flex">
+            <% if(typeof displayName=='string' && displayName) { %>
                 <th class="text-center col-2">title</th>
                 <th class="text-center col-2">author</th>
                 <th class="text-center col-2">genre</th>
@@ -31,52 +32,61 @@
                 <th class="text-center col-2">main_character</th>
                 <th class="text-center col-1">price</th>
                 <th class="text-center col-2">Actions</th>
-
+            <% } else { %>
+                <th class="text-center col-2">title</th>
+                <th class="text-center col-2">author</th>
+                <th class="text-center col-2">genre</th>
+                <th class="text-center col-1">published_year</th>
+                <th class="text-center col-1">rating</th>
+                <th class="text-center col-2">status</th>
+                <th class="text-center col-1">volumes</th>
+                <th class="text-center col-2">main_character</th>
+                <th class="text-center col-1">price</th>
+                <th class="text-center col-2">Actions</th>
+            <% } %>   
 
             </tr>
             <% for(let count=0;count<MangaList.length;count++) { %>    
-            <tr class="d-flex">
+                <tr class="d-flex">
 
                 <% if(typeof displayName=='string' && displayName) { %>
                 
 
-                <td class="text-center col-2"><%= MangaList[count].title %></td>
-                <td class="text-center col-2"><%= MangaList[count].author %></td>
-                <td class="text-center col-2"><%= MangaList[count].genre %></td>
-                <td class="text-center col-1"><%= MangaList[count].published_year %></td>
-                <td class="text-center col-1"><%= MangaList[count].rating %></td>
-                <td class="text-center col-2"><%= MangaList[count].status %></td>
-                <td class="text-center col-1"><%= MangaList[count].volumes %></td>
-                <td class="text-center col-2"><%= MangaList[count].main_character %></td>
-                <td class="text-center col-1"><%= MangaList[count].price %></td>
+                    <td class="text-center col-2"><%= MangaList[count].title %></td>
+                    <td class="text-center col-2"><%= MangaList[count].author %></td>
+                    <td class="text-center col-2"><%= MangaList[count].genre %></td>
+                    <td class="text-center col-1"><%= MangaList[count].published_year %></td>
+                    <td class="text-center col-1"><%= MangaList[count].rating %></td>
+                    <td class="text-center col-2"><%= MangaList[count].status %></td>
+                    <td class="text-center col-1"><%= MangaList[count].volumes %></td>
+                    <td class="text-center col-2"><%= MangaList[count].main_character %></td>
+                    <td class="text-center col-1"><%= MangaList[count].price %></td>
 
-                <td class="text-center col-1">
-                    <a href="/Manga/edit/<%= MangaList[count]._id %>" 
-                        class="btn btn-primary btn-sm">
-                        <i class="fas fa-pencil-alt"></i> Edit
-                    </a>
-                </td>
-                <td class="text-center col-1">
-                    <a href="/Manga/delete/<%= MangaList[count]._id %>" 
-                        class="btn btn-danger btn-sm">
-                        <i class="fa-solid fa-trash fa-shake"></i> Delete
-                    </a>
-                </td>
-
-            <% } else { %>    
-
-                <td class="text-center col-2"><%= MangaList[count].title %></td>
-                <td class="text-center col-2"><%= MangaList[count].author %></td>
-                <td class="text-center col-2"><%= MangaList[count].genre %></td>
-                <td class="text-center col-1"><%= MangaList[count].published_year %></td>
-                <td class="text-center col-1"><%= MangaList[count].rating %></td>
-                <td class="text-center col-2"><%= MangaList[count].status %></td>
-                <td class="text-center col-1"><%= MangaList[count].volumes %></td>
-                <td class="text-center col-2"><%= MangaList[count].main_character %></td>
-                <td class="text-center col-1"><%= MangaList[count].price %></td>
-             <% } %>
-            </tr>
-        <% } %>
+                    <td class="text-center col-1">
+                        <a href="/Manga/edit/<%= MangaList[count]._id %>" 
+                            class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i> Edit
+                        </a>
+                    </td>
+                    <td class="text-center col-1">
+                        <a href="/Manga/delete/<%= MangaList[count]._id %>" 
+                            class="btn btn-danger btn-sm">
+                            <i class="fa-solid fa-trash fa-shake"></i> Delete
+                        </a>
+                    </td>
+                <% } else { %>
+                    <td class="text-center col-2"><%= MangaList[count].title %></td>
+                    <td class="text-center col-2"><%= MangaList[count].author %></td>
+                    <td class="text-center col-2"><%= MangaList[count].genre %></td>
+                    <td class="text-center col-1"><%= MangaList[count].published_year %></td>
+                    <td class="text-center col-1"><%= MangaList[count].rating %></td>
+                    <td class="text-center col-2"><%= MangaList[count].status %></td>
+                    <td class="text-center col-1"><%= MangaList[count].volumes %></td>
+                    <td class="text-center col-2"><%= MangaList[count].main_character %></td>
+                    <td class="text-center col-1"><%= MangaList[count].price %></td> 
+                <% } %>   
+                </tr>
+            <% } %> 
         </table>
     </div>
     </div>
