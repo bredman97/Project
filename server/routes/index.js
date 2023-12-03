@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const passport = require('passport');
+let DB = require('../config/db');
+let userModel = require('../models/user');
+let User = userModel.User;
 
 router.get('/login',function(req,res,next){
   if(!req.user)

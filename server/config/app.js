@@ -12,6 +12,10 @@ let passportLocal = require('passport-local');
 let localStrategy = passportLocal.Strategy;
 let flash = require('connect-flash');
 
+// create a user model instance
+let userModel = require('../models/user');
+let User = userModel.User;
+
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
