@@ -8,7 +8,8 @@ module.exports.DislayMangalist = async (req,res,next)=>{ //< Mark function as as
        const MangaList = await Manga.find(); //< Use of await keyword
        res.render('Manga/list', {
           title: 'Manga List', 
-          MangaList: MangaList
+          MangaList: MangaList,
+          displayName: req.user ? req.user.displayName:''
        });
     }catch(err){
        console.error(err);
@@ -23,7 +24,8 @@ module.exports.DislayMangalist = async (req,res,next)=>{ //< Mark function as as
     try{
         res.render('Manga/add',
         {
-            title:'Add Manga'
+            title:'Add Manga',
+            displayName: req.user ? req.user.displayName:''
         })
     }
     catch(err)
@@ -70,6 +72,7 @@ module.exports.EditManga = async (req,res,next)=>{
     res.render('Manga/edit',
     {
         title:'Edit Manga',
+        displayName: req.user ? req.user.displayName:'',
         Manga:MangaToEdit
     })
 }

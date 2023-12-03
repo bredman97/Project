@@ -6,6 +6,11 @@ let logger = require('morgan');
 var router = express.Router();
 
 let app = express();
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -28,6 +33,25 @@ mongoose.connect(DB.URI);
 mongoDB.on('error',console.error.bind(console,'Connection Error'));
 mongoDB.once('open',()=>{console.log("Mongo DB is connected")});
 //mongoose.connect(DB.URI);
+
+// Set-up Express-Session
+app.use(session({
+  secret:"Manga",
+  saveUninitialized:false,
+  resave:false
+}));
+// initialize flash-connect
+app.use(flash());
+// implement a user authentication
+passport.use(User.createStrategy());
+// Serialize and Deserialize user information
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser()); 
+// initialize the passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let MangaRouter = require('../routes/Manga');

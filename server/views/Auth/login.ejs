@@ -1,8 +1,10 @@
+<%- include ../partials/header.ejs %>
 
+<%- include ../partials/main_nav.ejs %>
 
 <main class="container">
     <!--Message Area-->
-    <% if (message.lenth > 0) { %>
+    <% if (message.length > 0) { %>
     <div class="alert alter-danger">
         <%= message %>
     </div>
@@ -39,3 +41,6 @@
         </div>
     </div>
 </main>
+<%- include ../partials/bottom_nav.ejs %>  
+
+<%- include ../partials/footer.ejs %>
