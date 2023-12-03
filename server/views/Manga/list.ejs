@@ -12,11 +12,13 @@
 
     <div class="row pb-5">
         <div class="offset-md-1 col-md-10">
-            <h1><% title %> </h1>  
-            <a href="/Manga/add" class="btn btn-primary" 
-            
-            role="button"><i class="fas fa-plus-circle"></i> Add Manga</a>      
-        <br>
+            <h1><% title %> </h1> 
+            <% if(typeof displayName=='string' && displayName) { %> 
+                <a href="/Manga/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add Manga</a> 
+            <br>
+            <% } %>     
+            <br>
         <table class="table table-bordered table-striped table-hover">
             <tr class="d-flex">
                 <th class="text-center col-2">title</th>
@@ -34,6 +36,8 @@
             </tr>
             <% for(let count=0;count<MangaList.length;count++) { %>    
             <tr class="d-flex">
+
+                <% if(typeof displayName=='string' && displayName) { %>
                 
 
                 <td class="text-center col-2"><%= MangaList[count].title %></td>
@@ -58,8 +62,21 @@
                         <i class="fa-solid fa-trash fa-shake"></i> Delete
                     </a>
                 </td>
+
+            <% } else { %>    
+
+                <td class="text-center col-2"><%= MangaList[count].title %></td>
+                <td class="text-center col-2"><%= MangaList[count].author %></td>
+                <td class="text-center col-2"><%= MangaList[count].genre %></td>
+                <td class="text-center col-1"><%= MangaList[count].published_year %></td>
+                <td class="text-center col-1"><%= MangaList[count].rating %></td>
+                <td class="text-center col-2"><%= MangaList[count].status %></td>
+                <td class="text-center col-1"><%= MangaList[count].volumes %></td>
+                <td class="text-center col-2"><%= MangaList[count].main_character %></td>
+                <td class="text-center col-1"><%= MangaList[count].price %></td>
+             <% } %>
             </tr>
-            <% } %>
+        <% } %>
         </table>
     </div>
     </div>
