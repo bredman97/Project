@@ -16,7 +16,7 @@ function requireAuth(req,res,next){
 
 /* Get route for the Bio Mangas list */
 // Read Operation
-router.get('/', requireAuth, MangaController.DislayMangalist);
+router.get('/', MangaController.DislayMangalist);
 /* Get route for Add Manga page --> Create */
 router.get('/add', requireAuth, MangaController.AddManga); 
 /* Post route for Add Manga page --> Create */
