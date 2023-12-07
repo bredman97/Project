@@ -1,96 +1,122 @@
-body {
-    font-family: 'Arial', sans-serif;
+/* Reset some default styles */
+body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    background: linear-gradient(to right, #333, #555);
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #6c757d; /* Grey background color */
     color: #fff;
-    padding: 10px 0;
+    padding: 2rem 0;
     text-align: center;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #444;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav a {
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Navigation styles */
+  nav {
+    background-color: #343a40;
+    padding: 1rem;
+  }
+  
+  nav a {
+    color: #fff;
     text-decoration: none;
-    color: #fff;
+    margin-right: 1rem;
     font-weight: bold;
-}
-
-main {
-    padding: 20px;
-}
-
-.jumbotron {
-    background: linear-gradient(to right, #2C3E50, #3498DB);
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
-    margin-bottom: 20px;
-}
-
-section {
-    background-color: #f8f8f8;
-    padding: 20px;
-}
-
-form {
+    transition: color 0.3s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #6c757d;
+  }
+  
+  /* Main content styles */
+  main {
+    margin-top: 2rem;
+  }
+  
+  /* Manga item styles */
+  .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    background-color: #e9ecef; /* Light grey background color */
+  }
+  
+  .col-md-4:nth-child(2n) {
+    background-color: #dee2e6; /* Slightly darker grey background color */
+  }
+  
+  .col-md-4 img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .col-md-4 img:hover {
+    transform: scale(1.05);
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #495057; /* Dark grey text color */
+  }
+  
+  /* Make "Featured Manga" and "Latest Releases" bold and same size */
+  .jumbotron h2,
+  .my-5 h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Contact section styles */
+  form {
     max-width: 600px;
     margin: 0 auto;
-}
-
-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-form button {
-    background: linear-gradient(to right, #333, #555);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-#confirmationMessage {
+  }
+  
+  /* Confirmation message styles */
+  #confirmationMessage {
     display: none;
-    text-align: center;
-    padding: 20px;
-    background-color: #4CAF50;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #28a745;
     color: #fff;
-}
-
-footer {
-    background: linear-gradient(to right, #333, #555);
+    border-radius: 8px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #343a40;
     color: #fff;
+    padding: 1rem 0;
     text-align: center;
-    padding: 10px 0;
-}
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .col-md-4 img {
+      width: 100%; /* Adjust width for smaller screens */
+      height: auto;
+    }
+  }
+  
